@@ -1,0 +1,46 @@
+package pdf0524;
+
+import java.util.Scanner;
+
+public class StudentGrade {
+
+	public static void main(String[] args) {
+		/*
+		1. 학생 수를 입력받아 출력한다.
+		1.1. 학생 수는 양수로 받는다.
+		
+		2. 과목 수를 입력받아 출력한다.
+		2.2. 과목 수는 양수로 받는다.
+		
+		3. 과목을 입력 받아 출력한다.
+		4. 학생 이름을 입력받아 출력하나
+				
+		*/		
+		
+		// 입력을 받기 위한 스캐너 객체 생성
+		Scanner scanner = new Scanner(System.in);
+		
+		// 변수 선언
+		int students;
+		int subjects;
+		
+		students = 0;
+		subjects = 0;
+				
+		// 학생 수를 입력받는다.
+		System.out.print("학생 수 입력(양수) : ");
+		
+		students = scanner.nextInt();
+		if (students > 0) {
+			System.out.println(students);
+		}
+		
+		
+		// 과목 수를 입력받는다.
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package ch05.sec05;
+
+public class CharAtExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package ch05.sec07;
+
+public class MultidmensionalArrayByValueListExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

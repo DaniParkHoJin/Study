@@ -1,0 +1,84 @@
+package homework;
+
+import java.util.Scanner;
+
+public class CreditCardExpenses {
+
+	public static void main(String[] args) {
+
+		// 1. 입력 받기 위한 스캐너 객체 생성
+		Scanner scanner = new Scanner(System.in);
+
+		// 2. 변수 선언
+		int sum; // 12개월 총사용 금액
+		int avg; // 월 평균 사용 금액
+		int max; // 가장 많이 사용한 금액
+		int min; // 가장 적게 사용한 금액
+		int maxMonth; // 가장 많이 쓴달
+		int minMonth; // 가장 많이 쓴달
+
+		sum = 0;
+		avg = 0;
+
+		// 3. 배열 선언
+		int[] CardExpenses = new int[12];
+
+		// 프로그램 제목
+		System.out.println("카드 사용 금액");
+
+		// 4. 12개월치 카드사용금액을 입력 받는 반복문
+		// 카드사용금액을 입력받는 것부터 작성 후 12번 반복
+		// 4.1. 카드사용금액을 입력 받을 때 음수를 검사한다.
+		// 4.2. 반복문 안에서 카드사용금액 총합을 구한다.
+		for (int i = 0; i < CardExpenses.length; i++) {
+			do {
+				System.out.print((i + 1) + "월 사용 금액을 입력하세요. : ");
+				CardExpenses[i] = scanner.nextInt();
+				if (CardExpenses[i] < 0) {
+					System.out.println("잘못 입력하셨습니다. 정확한 사용금액을 입력하세요. : ");
+				}
+			} while (CardExpenses[i] < 0);
+
+			sum += CardExpenses[i];
+		}
+		// 5. 총합에서 평균을 구한다.
+		avg = sum / CardExpenses.length;
+
+		// 6. 가장 카드를 많이 사용한 달을 찾는다.
+		// 반복문으로 최대값을 찾는다.
+		max = CardExpenses[0];
+		for (int i = 0; i < CardExpenses.length; i++) {
+			if (max < CardExpenses[i]) {
+				max = CardExpenses[i];
+
+			}
+			maxMonth = i;
+			System.out.println(maxMonth);
+		}
+
+		// 7. 가장 카드를 적게 사용한 달을 찾는다.
+		// 반복문으로 최소값을 찾는다.
+		min = CardExpenses[0];
+		for (int i = 0; i < CardExpenses.length; i++) {
+			if (min > CardExpenses[i]) {
+				min = CardExpenses[i];
+			}
+			minMonth = i;
+
+		}
+
+		// 8. 1년 동안 전체 사용금액을 출력한다.
+		System.out.println("1년 동안의 전체 사용금액 : " + sum);
+
+		// 9. 월 평균 사용 금액을 출력한다.
+		System.out.println("월 평균 사용 금액 : " + avg);
+
+		/*
+		 * // 10. 가장 지출이 많았던 달을 출력한다. System.out.println("가장 지출이 많았던 월 : " + );
+		 * 
+		 * // 11. 가장 지출이 적었던 달을 출력한다. System.out.println("가장 지출이 적었던 월 : " + );
+		 */
+		scanner.close();
+	}
+
+}

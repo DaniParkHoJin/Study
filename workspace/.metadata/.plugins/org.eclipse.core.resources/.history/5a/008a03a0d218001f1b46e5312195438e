@@ -1,0 +1,10 @@
+package ch05.sec05;
+
+public class SubStringExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

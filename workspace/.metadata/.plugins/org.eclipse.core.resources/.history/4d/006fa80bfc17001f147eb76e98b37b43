@@ -1,0 +1,137 @@
+package KioskHojin;
+
+import java.util.Scanner;
+
+public class KioskHojin {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		int menuNum; // 메뉴번호 입력 변수
+		int menuAmount; // 메뉴 수량 입력 변수
+
+		// 메뉴 이름 변수 선언
+		String dolceLatteName; // 돌체라떼 이름 변수
+		int dolceLattePrice; // 돌체라떼 가격 변수
+
+		String whiteChoclateMochaName; // 화이트초코모카 이름 변수
+		int whiteChoclateMochaPrice; // 화이트초코모카 가격 변수
+
+		String caramelMacchiatoName; // 카라멜마키아또 이름 변수
+		int caramelMacchiatoPrice; // 카라멜마키아또 가격 변수
+
+		String caffeLatteName; // 카페라떼 이름 변수
+		int caffeLattePrice; // 카페라떼 가격 변수
+
+		String cappuccinoName; // 카푸치노 이름 변수
+		int cappuccinoPrice; // 카푸치노 가격 변수
+
+		String caffeAmericanoName; // 카페아메리카노 이름 변수
+		int caffeAmericanoPrice; // 카페아메리카노 가격 변수
+
+		String affogateName; // 아포가토 이름 변수
+		int affogatePrice; // 아포카토 가격 변수
+
+		String malchaLatteTeaName; // 말차라떼 이름 변수
+		int malchaLatteTeaPrice; // 말차라떼 가격 변수
+
+		String blackMikeTeaName; // 블랙밀크티 이름 변수
+		int blackMikeTeaPrice; // 블랙밀크티 가격 변수
+
+		String chaiTeaLatteName; // 차이라떼 이름 변수
+		int chaiTeaLattePrice; // 차이라떼 가격 변수
+
+		// 메뉴 이름 가격 초기화
+		dolceLatteName = "돌체 라떼";
+		dolceLattePrice = 5900;
+
+		whiteChoclateMochaName = "화이트 초코 모카";
+		whiteChoclateMochaPrice = 5800;
+
+		caramelMacchiatoName = "카라멜 마키아또";
+		caramelMacchiatoPrice = 6000;
+
+		caffeLatteName = "카페 라떼";
+		caffeLattePrice = 5000;
+
+		cappuccinoName = "카푸치노";
+		cappuccinoPrice = 5000;
+
+		caffeAmericanoName = "카페 아메리카노";
+		caffeAmericanoPrice = 4500;
+
+		affogateName = "아포카토";
+		affogatePrice = 7000;
+
+		malchaLatteTeaName = "말차 라떼";
+		malchaLatteTeaPrice = 6100;
+
+		blackMikeTeaName = "블랙 밀크 티";
+		blackMikeTeaPrice = 5900;
+
+		chaiTeaLatteName = " 차이 티 라떼";
+		chaiTeaLattePrice = 5500;
+
+		System.out.println("---------------스타벅스에 오신 것을 환영합니다.-----------------");
+
+		System.out.print("1." + dolceLatteName + "  " + dolceLattePrice + "    ");
+		System.out.print("2." + whiteChoclateMochaName + "  " + whiteChoclateMochaPrice + "    ");
+		System.out.println("3." + caramelMacchiatoName + "  " + caramelMacchiatoPrice);
+		System.out.print("4." + caffeLatteName + "  " + caffeLattePrice + "    ");
+		System.out.print("5." + cappuccinoName + "  " + cappuccinoPrice + "    ");
+		System.out.println("6." + caffeAmericanoName + "  " + caffeAmericanoPrice);
+		System.out.print("7." + affogateName + "  " + affogatePrice + "    ");
+		System.out.print("8." + malchaLatteTeaName + "  " + malchaLatteTeaPrice + "    ");
+		System.out.println("9." + blackMikeTeaName + "  " + blackMikeTeaPrice);
+		System.out.println("10." + chaiTeaLatteName + "  " + chaiTeaLattePrice);
+
+		System.out.println("--------------------------------------------------------");
+		System.out.println();
+
+		
+		System.out.print("메뉴 번호를 선택하세요. : ");
+		menuNum = input.nextInt();
+		
+		switch (menuNum) {
+		
+		case 1 :
+			System.out.println(dolceLatteName +"를 선택하셨습니다.");
+			break;
+		case 2 :
+			System.out.println(whiteChoclateMochaName +"를 선택하셨습니다.");
+			break;
+		case 3 :
+			System.out.println(caramelMacchiatoName +"를 선택하셨습니다.");
+			break;
+		case 4 :
+			System.out.println(caffeLatteName +"를 선택하셨습니다.");
+			break;
+		case 5 :
+			System.out.println(cappuccinoName +"를 선택하셨습니다.");
+			break;
+		case 6 :
+			System.out.println(caffeAmericanoName +"를 선택하셨습니다.");
+			break;
+		case 7 :
+			System.out.println(affogateName +"를 선택하셨습니다.");
+			break;
+		case 8 :
+			System.out.println(malchaLatteTeaName +"를 선택하셨습니다.");
+			break;
+		case 9 :
+			System.out.println(blackMikeTeaName +"를 선택하셨습니다.");
+			break;
+		case 10 :
+			System.out.println(chaiTeaLatteName +"를 선택하셨습니다.");
+			break;		
+		}
+		System.out.println();
+		System.out.print("선택한 메뉴의 수량을 입력하세요. : ");
+		menuAmount = input.nextInt();
+
+		
+
+	}
+
+}

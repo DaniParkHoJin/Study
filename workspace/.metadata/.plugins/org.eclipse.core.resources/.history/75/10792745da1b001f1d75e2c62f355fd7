@@ -1,0 +1,19 @@
+
+public class PrimeNumberMethod {
+
+	public static void main(String[] args) {
+		System.out.println("50개의 소수를 출력하는 프로그램");
+		 printPrimeNumbers(50);
+	}
+
+	public static void printPrimeNumbers(int i) {
+		final int NUMBER_OF_PRIMES_PER_LINE = 10; // 각행에 10개씩
+		int count = 0; // 소수의 갯수
+		int number = 2; // 소수의 테스트 초기 숫자를 2로 설정한다.
+		
+		// 반복적으로 소수 찾기
+		
+		
+	}
+
+}

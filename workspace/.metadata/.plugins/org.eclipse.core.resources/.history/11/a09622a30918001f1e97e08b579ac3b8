@@ -1,0 +1,21 @@
+package homework;
+
+import java.util.Scanner;
+
+public class MileToKilometer {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		double mile;
+		double kilometer;
+		
+		System.out.print("마일을 입력하세요. : ");
+		
+		
+		
+		
+	}
+
+}

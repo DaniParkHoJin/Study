@@ -1,0 +1,134 @@
+package pdf0524;
+
+import java.util.Scanner;
+
+public class StudentGrade {
+
+	public static void main(String[] args) {
+		/*
+		 * 1. 학생 수를 입력받아 출력한다. 1.1. 학생 수는 양수로 받는다.
+		 * 
+		 * 2. 과목 수를 입력받아 출력한다. 2.2. 과목 수는 양수로 받는다.
+		 * 
+		 * 3. 과목을 입력 받아 출력한다. 4. 학생 이름을 입력받아 출력하나
+		 * 
+		 */
+
+		// 입력을 받기 위한 스캐너 객체 생성
+		Scanner scanner1 = new Scanner(System.in); // int를 입력받기 위한 스캐너
+		Scanner scanner2 = new Scanner(System.in); // Stirng을 입력받기 위한 스캐너
+
+		// 변수 선언
+		int students;
+		int subjects;
+
+		students = 0;
+		subjects = 0;
+
+		// 학생 수를 입력받는다.
+		System.out.print("학생 수 입력(양수) : ");
+
+		do {
+			students = scanner1.nextInt();
+
+			// 탈출조건
+			if (students > 0) { // 양수면 통과
+				break;
+			} else {
+				System.out.print("잘못 입력하셨습니다. 학생 수를 입력하세요. : ");
+			}
+		} while (true);
+
+		// 과목 수를 입력받는다.
+		System.out.print("과목 수 입력(양수) : ");
+
+		do {
+			subjects = scanner1.nextInt();
+
+			// 탈출조건
+			if (subjects > 0) { // 양수면 통과
+				break;
+			} else {
+				System.out.print("잘못 입력하셨습니다. 과목 수를 입력하세요. : ");
+			}
+		} while (true);
+
+		// 입력받은 학생 수에 따른 배열 생성, 이름을 받아야함으로 String
+		String[] studentArray = new String[students];
+
+		// 입력받은 과목 수에 따른 배열 생성, 과목명을 받아야함으로 String
+		String[] subjectArray = new String[subjects];
+
+		// 과목명을 입력 받는다. 입력받은 과목 수에 따라 반복하며 과목명을 배열에 넣는다.
+		for (int i = 0; i < subjects; i++) {
+			System.out.print("과목명 입력 : ");
+			subjectArray[i] = scanner2.nextLine();
+		}
+		;
+
+		// 학생 이름을 입력받는다. 입력받은 학생 수에 따라 반복하며 학생 이름을 배열에 넣는다.
+		// 학생과 과목에 따른 2차원 배열 생성, 학생(행) 점수(열)
+		int[][] grade = new int[students][subjects];
+		for (int i = 0; i < students; i++) {
+			System.out.print("학생 이름 입력 : ");
+			studentArray[i] = scanner2.nextLine();
+
+			for (int j = 0; j < subjects; j++) {
+
+				do {
+					System.out.print(subjectArray[j] + "점수 입력(양수) : ");
+					grade[i][j] = scanner1.nextInt();
+
+					if (grade[i][j] > 0) {
+						break;
+					} else {
+						System.out.print("점수를 잘못 입력하셨습니다. ");
+
+					}
+
+				} while (true);
+
+			}
+		}
+
+		// 총학생수 출력
+		System.out.println();
+		System.out.println("총학생수 : " + students + "명 성적표");
+		System.out.println();
+
+		// 학생에 따른 총점
+		int sum[] = new int[subjects];
+
+		for (int i = 0; i < grade.length; i++) {
+
+			for (int j = 0; j < students; j++) {
+				sum[i] += grade[i][j];
+			}
+			// System.out.println("학생별 총점 : " + sum[i]);// 학생 별 총점
+		}
+
+		// 학생에 따른 평균
+		int avg[] = new int[students];
+
+		for (int i = 0; i < students; i++) {
+			avg[i] = sum[i] / subjects;
+			// System.out.println("학생별 평균 : " + avg[i]);// 학생 별 평균
+		}
+		System.out.println("---------------------");
+
+		// 마지막 출력
+		System.out.print("학생명 \t");
+		for (int i = 0; i < avg.length; i++) {
+			System.out.print(subjectArray[i] + "\t");
+		}
+		System.out.print("총점\t평균\t");
+		System.out.println();
+
+		// 학생 이름과 점수 2차원 배열 출력
+
+		for (int i = 0; i < students; i++) {
+			System.out.print(studentArray[i] + "\t" + grade[i][i] + "\t" +grade[i+1][i+1] + "\t" + sum[i] + "\t" + avg[i] + "\t\n");
+		}
+
+	}
+}

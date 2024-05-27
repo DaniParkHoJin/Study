@@ -1,0 +1,30 @@
+package homework;
+
+import java.util.Scanner;
+
+public class SphereVolume {
+
+	public static void main(String[] args) {
+		
+		// 반지름을 입력받는 스캐너 선언
+		Scanner sphereInfoInput = new Scanner(System.in);
+		
+		// 변수 선언
+		double radius;			// 반지름
+		double volumeResult;	// 부피 계산 결과
+		
+		// 반지름을 입력받는다.
+		System.out.print("구의 반지름을 입력하세요. : ");
+		radius = sphereInfoInput.nextDouble();
+		
+		// 부피 계산
+		volumeResult = (4/3)*(3.14159)*(radius*radius*radius);
+		
+		// 계산된 부피를 출력한다.
+		System.out.println("구의 부피는 " + volumeResult + " 입니다.");
+		
+		// 스캐너 객체 종료
+		sphereInfoInput.close();
+	}
+
+}

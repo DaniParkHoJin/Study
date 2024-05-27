@@ -1,0 +1,42 @@
+package homework;
+
+import java.util.Scanner;
+
+public class CylinderVolume {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		double radius; 	// 반지름
+		double length; 	// 길이
+		double area;	// 원의 면적
+		double volume; 	// 실린더의 부피
+
+		// 사용자로부터 실린더의 반지름을 입력받는다.
+		System.out.print("실린더의 반지름을 입력하세요 : ");
+		radius = input.nextDouble();
+
+		// 사용자로부터 실린더의 길이를 입렵받는다.
+		System.out.print("실린더의 길이를 입력하세요 : ");
+		length = input.nextDouble();
+
+		// 입력받는 반지름과 길이가 0 이하면 계산할 수 없다.
+		if (radius > 0 && length > 0) {
+
+			// 입력받은 반지름으로 원의 면적을 구한다.
+			// 원의 면적 = 반지름 * 반지름 * 원주율
+			area = radius * radius * 3.14;
+
+			// 구해진 원의 면적으로 입력받은 길이로 실린더의 부피를 구한다.
+			volume = area * length;
+
+			// 계산한 부피를 출력한다.
+			System.out.println("실린더의 부피는 " + volume + "입니다.");
+
+		} else {
+			System.out.println("잘못된 값을 입력하셨습니다.");
+		}
+		input.close();
+	}
+
+}

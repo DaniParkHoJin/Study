@@ -1,0 +1,16 @@
+package forExam;
+
+public class GuGuDan {
+
+	public static void main(String[] args) {
+
+		int i;
+		int j;
+		for (j = 2; j < 10; j++) {
+			System.out.println("----"+j + "´Ü----");
+			for (i = 1; i < 10; i++) {
+				System.out.println(j + "*" + i + " = " + (j * i));
+			}
+		}
+	}
+}

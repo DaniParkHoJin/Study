@@ -1,0 +1,25 @@
+package homework;
+
+import java.util.Scanner;
+
+public class MileToKilometer {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		double mile;  //
+		double kilometer;  //
+		
+		System.out.print("마일을 입력하세요. : ");
+		mile = input.nextDouble();
+		
+		// 킬로미터 = 마일 * 킬로미터변환상수(1.609)
+		kilometer = mile * 1.609;
+		
+		System.out.println(mile + "마일은 " + kilometer + "킬로미터입니다." );
+		
+		input.close();
+	}
+
+}

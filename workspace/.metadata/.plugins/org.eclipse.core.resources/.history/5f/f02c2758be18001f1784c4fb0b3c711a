@@ -1,0 +1,18 @@
+package homework;
+
+import java.util.Scanner;
+
+/*
+ * 판단 조건 
+ * 1. 입력받는 반지름이 0 이하여서는 안된다.
+ * 2. 입력받는 길이는 0 이하여서는 안된다.
+ */
+public class CoolingTemperature {
+
+	public static void main(String[] args) {
+
+		
+
+	}
+
+}

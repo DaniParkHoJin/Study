@@ -1,0 +1,10 @@
+package pdf0524;
+
+public class StudentArrayInput {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
