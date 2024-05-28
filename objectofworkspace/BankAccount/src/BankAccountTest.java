@@ -34,14 +34,15 @@ public class BankAccountTest {
 		// 복리 잔액 위해 필요한 기간을 받는다.
 		double finalAmount; // 예상 잔액  
 		double years; // 기간을 년으로 받는다.
+		System.out.print("몇 년동안 예치하시겠습니까? : ");
 		years = scanner2.nextDouble(); 
-		finalAmount = expecteBalance.getBalance() * Math.pow(expecteBalance.getInterestRate(), years);
-		
-		
-		
+		finalAmount = expecteBalance.getBalance() * Math.pow(expecteBalance.getInterestRate(), years);		
 		//		여기서는 잔액과 기간을 입력받아 이자율에 따라 복리로 예상 잔액을 계산한다.
 		
 		// 9. 출력한다.
+		System.out.println(expecteBalance.getName() + "님의 계좌 " + expecteBalance.getAccount() + " 는 현재 " + expecteBalance.getBalance() + "원 이 남아있습니다.");
+		System.out.println("위 금액을 " + years + "년동안 예치하시면 " + years + "년 후는 " + finalAmount + "가 됩니다.");
+		
 		System.out.println(expecteBalance.toString());
 		
 		scanner1.close();
