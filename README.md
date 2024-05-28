@@ -1,5 +1,4 @@
 한국소프트웨어인재개발원 교육과정
 2024.5.16 ~
-학원에서 clone
-집에서 형상관리 연습
-학원에서 academy branch 시작
+학원 academy
+집 home
