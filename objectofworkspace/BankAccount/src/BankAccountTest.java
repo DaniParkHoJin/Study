@@ -32,8 +32,10 @@ public class BankAccountTest {
 		
 		// 8. 프로그램에 맞게 계산식을 만든다. 문제에 기본 클래스에 메서드가 없으므로 임으로 프로그램 작성을 위해 만드는 것임.
 		// 복리 잔액 위해 필요한 기간을 받는다.
-		int year;
-		year = 
+		double finalAmount; // 예상 잔액  
+		double years; // 기간을 년으로 받는다.
+		years = scanner2.nextDouble(); 
+		finalAmount = expecteBalance.getBalance() * Math.pow(expecteBalance.getInterestRate(), years);
 		
 		
 		
