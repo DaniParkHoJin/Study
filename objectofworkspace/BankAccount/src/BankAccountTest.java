@@ -41,7 +41,7 @@ public class BankAccountTest {
 		
 		// 9. 출력한다.
 		System.out.println(expecteBalance.getName() + "님의 계좌 " + expecteBalance.getAccount() + " 는 현재 " + expecteBalance.getBalance() + "원 이 남아있습니다.");
-		System.out.println("위 금액을 " + years + "년동안 예치하시면 " + years + "년 후는 " + finalAmount + "가 됩니다.");
+		System.out.println("위 금액을 " + years + "년동안 예치하시면 " + years + "년 후는 " + finalAmount + "원이 됩니다.");
 		
 		System.out.println(expecteBalance.toString());
 		

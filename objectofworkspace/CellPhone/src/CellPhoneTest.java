@@ -14,10 +14,10 @@ public class CellPhoneTest {
 //		8. 카메라 장착여부를 입력받는다.
 //		9. 입력된 카메라 정보를 출력한다.
 //		
-//		1. 입력받기 위한 스캐너 객체 생성
+		// 1. 입력받기 위한 스캐너 객체 생성
 		Scanner scanner1 = new Scanner(System.in);// String 을 입력받기 위한 Scanner 객체
 		Scanner scanner2 = new Scanner(System.in);// int 를 입력받기 위한 Scanner 객체
-//		2. cellPhone 객체 생성
+		// 2. cellPhone 객체 생성
 		CellPhone workPlacePhone = new CellPhone();
 //		3. 프로그램 이름 출력
 		System.out.println("---------------리니지 작업장 핸드폰 상태 확인 프로그램---------------");

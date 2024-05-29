@@ -9,5 +9,12 @@
     <fullyQualifiedTypeName name="CellPhone"/>
     <fullyQualifiedTypeName name="BankAccount"/>
     <fullyQualifiedTypeName name="java.awt.desktop.ScreenSleepEvent"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="Speed"/>
+    <fullyQualifiedTypeName name="Point"/>
+    <fullyQualifiedTypeName name="com.hankook.Tire"/>
+    <fullyQualifiedTypeName name="com.mycompany.Car"/>
+    <fullyQualifiedTypeName name="com.kumho.Tire"/>
+    <fullyQualifiedTypeName name="practice.Singleton"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
