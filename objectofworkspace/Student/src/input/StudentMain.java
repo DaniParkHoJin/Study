@@ -18,7 +18,7 @@ public class StudentMain {
 		do {
 			System.out.print("학생 인원수 입력(2~30) : ");
 			studentCount = input.nextInt();
-		} while (studentCount > 2 && studentCount <= 30);
+		} while (studentCount < 2 && studentCount > 30);
 		info = new Student[studentCount]; // 학생 객체 선언
 		// 학생 객체 생성
 		for (int i = 0; i < info.length; i++) {
