@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="Loan"/>
     <fullyQualifiedTypeName name="Course"/>
-    <fullyQualifiedTypeName name="Rectangle"/>
     <fullyQualifiedTypeName name="Employee"/>
     <fullyQualifiedTypeName name="CellPhone"/>
     <fullyQualifiedTypeName name="BankAccount"/>
@@ -16,5 +14,13 @@
     <fullyQualifiedTypeName name="com.mycompany.Car"/>
     <fullyQualifiedTypeName name="com.kumho.Tire"/>
     <fullyQualifiedTypeName name="practice.Singleton"/>
+    <fullyQualifiedTypeName name="Parent"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="javax.sound.sampled.TargetDataLine"/>
+    <fullyQualifiedTypeName name="Circle"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="Rectangle"/>
+    <fullyQualifiedTypeName name="Human"/>
+    <fullyQualifiedTypeName name="Student"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
