@@ -4,7 +4,6 @@ INDEX VERSION 1.134+D:\javaproject\objectofworkspace\.metadata\.plugins\org.ecli
 3655964561.index
 1865797976.index
 40143053.index
-1561259185.index
 316123132.index
 3946835888.index
 1749246500.index
