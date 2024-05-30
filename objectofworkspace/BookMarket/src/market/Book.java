@@ -3,7 +3,7 @@ package market;
 public class Book {
 	private String bookID;// 도서ID
 	private String isbn;// 도서ISBN
-	private String book;// 도서명
+	private String bookName;// 도서명
 	private double bookPrice;// 가격
 	private String author;// 저자
 	private String bookExplanation;// 도서 설명
@@ -14,12 +14,12 @@ public class Book {
 		super();
 	}
 
-	public Book(String bookID, String isbn, String book, double bookPrice, String author, String bookExplanation,
+	public Book(String bookID, String isbn, String bookName, double bookPrice, String author, String bookExplanation,
 			String bookcategory, String publicationDate) {
 		super();
 		this.bookID = bookID;
 		this.isbn = isbn;
-		this.book = book;
+		this.bookName = bookName;
 		this.bookPrice = bookPrice;
 		this.author = author;
 		this.bookExplanation = bookExplanation;
@@ -35,8 +35,8 @@ public class Book {
 		return isbn;
 	}
 
-	public String getBook() {
-		return book;
+	public String getBookName() {
+		return bookName;
 	}
 
 	public double getBookPrice() {
@@ -67,8 +67,8 @@ public class Book {
 		this.isbn = isbn;
 	}
 
-	public void setBook(String book) {
-		this.book = book;
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
 
 	public void setBookPrice(double bookPrice) {
@@ -93,7 +93,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [bookID=" + bookID + ", isbn=" + isbn + ", book=" + book + ", bookPrice=" + bookPrice + ", author="
+		return "Book [bookID=" + bookID + ", isbn=" + isbn + ", bookname=" + bookName + ", bookPrice=" + bookPrice + ", author="
 				+ author + ", bookExplanation=" + bookExplanation + ", bookcategory=" + bookcategory
 				+ ", PublicationDate=" + PublicationDate + "]";
 	}
