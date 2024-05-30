@@ -61,7 +61,7 @@ public class WelcomeMarket {
 					break;
 				case 3:
 					menuCartClear();
-					// 장바구기 비우기
+					// 장바구니 비우기
 					break;
 				case 4:
 					munuCartAdd();
