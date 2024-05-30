@@ -64,7 +64,7 @@ public class WelcomeMarket {
 					// 장바구니 비우기
 					break;
 				case 4:
-					munuCartAdd();
+					menuCartAdd();
 					// 장바구니 항목 추가하기
 					break;
 				case 5:
@@ -121,7 +121,7 @@ public class WelcomeMarket {
 		System.out.println("3. 장바구니 비우기");
 	}
 
-	public static void munuCartAdd() {
+	public static void menuCartAdd() {
 		System.out.println("4.장바구니에 항목 추가하기");
 	}
 
