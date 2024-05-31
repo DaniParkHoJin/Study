@@ -43,15 +43,6 @@ public class BookMain {
 	}
 
 	public static void bookSearch() {
-		// 변수 선언
-		String bookID;// 도서ID
-		String isbn;// 도서ISBN
-		String bookName;// 도서명
-		double bookPrice;// 가격
-		String author;// 저자
-		String bookExplanation;// 도서 설명
-		String bookCategory;// 도서 분야
-		String publicationDate; // 출간일
 
 		Book[] book = new Book[totalBook];
 
