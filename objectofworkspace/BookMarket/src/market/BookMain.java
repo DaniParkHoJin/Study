@@ -29,17 +29,80 @@ public class BookMain {
 		// 책에 대한 메서드 모두 정리
 		do {
 			// 도서 정보 입력
-
 			bookInput();
 			// 도서 정보 수정
-
+			bookModify();
 			// 도서 정보 삭제
-
+			bookdelet();
 			// 도서 정보 조회
 			bookSearch();
 			break;
 		} while (true);
 
+	}
+
+	public static void bookModify() {
+		Book[] book = new Book[totalBook];
+		// 선택을 위한 변수
+		int select;
+		String inputKeyword; // 사용자가 입력한 단어
+		inputKeyword = stringInput.nextLine();
+		for (int i = 0; i < book.length; i++) {
+
+			if (inputKeyword.equals(book[i].getBookName()) || inputKeyword.equals(book[i].getAuthor())
+					|| inputKeyword.equals(book[i].getBookcategory())) {
+				System.out.print(book[i].toString() + " 이 맞습니까? \n 어느 항목을 수정하시겠습니까?");
+				select = numberInput.nextInt();
+
+				switch (select) {
+				case 1:
+					// 책이름
+					break;
+				case 2:
+					// 저자
+					break;
+				case 3:
+					//키워드
+					break;
+				case 4:
+					//분야
+					break;
+				case 5:
+
+					break;
+
+				case 6:
+
+					break;
+				default:
+					break;
+				}
+			} else {
+				System.out.print("일치하는 책이 없습니다. 다른 검색어를 입력해주세요 : ");
+
+			}
+
+		}
+	}
+
+	public static void bookdelet() {
+
+		Book[] book = new Book[totalBook];
+
+		String inputKeyword; // 사용자가 입력한 단어
+		inputKeyword = stringInput.nextLine();
+		for (int i = 0; i < book.length; i++) {
+			// 등록된 책만큼 반복하면서 책이름, 저가, 키워드, 카데고리 중 일치를 찾는다.
+			if (inputKeyword.equals(book[i].getBookName()) || inputKeyword.equals(book[i].getAuthor())
+					|| inputKeyword.equals(book[i].getBookcategory())) {
+				book[i] = null;// 객체 배열 선택 후 null을 넣으면 삭제가 된다.
+				System.out.println("선택하신 책을 삭제 했습니다.");
+			} else {
+				System.out.print("일치하는 책이 없습니다. 다른 검색어를 입력해주세요 : ");
+
+			}
+
+		}
 	}
 
 	public static void bookSearch() {
@@ -52,7 +115,8 @@ public class BookMain {
 
 			if (inputKeyword.equals(book[i].getBookName()) || inputKeyword.equals(book[i].getAuthor())
 					|| inputKeyword.equals(book[i].getBookcategory())) {
-				book.toString();
+				System.out.print(book[i].toString());
+
 			} else {
 				System.out.print("일치하는 책이 없습니다. 다른 검색어를 입력해주세요 : ");
 			}
