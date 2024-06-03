@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="Loan"/>
     <fullyQualifiedTypeName name="Course"/>
     <fullyQualifiedTypeName name="CellPhone"/>
@@ -34,4 +33,20 @@
     <fullyQualifiedTypeName name="Undergraduate"/>
     <fullyQualifiedTypeName name="Graduate"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="SmartTV"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
+    <fullyQualifiedTypeName name="Audio"/>
+    <fullyQualifiedTypeName name="ServiceImpl"/>
+    <fullyQualifiedTypeName name="Searchable"/>
+    <fullyQualifiedTypeName name="RemoteControl"/>
+    <fullyQualifiedTypeName name="SmartTelevision"/>
+    <fullyQualifiedTypeName name="InterfaceImpl"/>
+    <fullyQualifiedTypeName name="InterfaceA"/>
+    <fullyQualifiedTypeName name="InterfaceC"/>
+    <fullyQualifiedTypeName name="car.HankookTire"/>
+    <fullyQualifiedTypeName name="car.KumhoTire"/>
+    <fullyQualifiedTypeName name="driver.Driver"/>
+    <fullyQualifiedTypeName name="driver.Vehicle"/>
+    <fullyQualifiedTypeName name="driver.Bus"/>
+    <fullyQualifiedTypeName name="driver.Taxi"/>
 </qualifiedTypeNameHistroy>
