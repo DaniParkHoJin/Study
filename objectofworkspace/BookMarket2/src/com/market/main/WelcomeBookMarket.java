@@ -2,6 +2,8 @@ package com.market.main;
 
 import java.util.Scanner;
 
+import com.market.bookitem.Book;
+import com.market.cart.Cart;
 import com.market.cart.CartItem;
 import com.market.member.Admin;
 import com.market.member.Customer;
@@ -10,9 +12,9 @@ import com.market.member.User;
 public class WelcomeBookMarket {
 	static final int NUM_BOOK = 3; // 도서 개수
 	static final int NUM_ITEM = 8; // 도서 정보의 개수
-	static CartItem[] cartItem = new CartItem[NUM_BOOK]; // 장바구니
-	static int cartCount = 0; // 장바구니 목록 개수
-
+	// static CartItem[] cartItem = new CartItem[NUM_BOOK]; // 장바구니
+	// static int cartCount = 0; // 장바구니 목록 개수
+	static Cart cart = new Cart();
 	static User user; // 사용자
 
 	public static void main(String[] args) {
@@ -52,7 +54,7 @@ public class WelcomeBookMarket {
 					break;
 				case 4:
 					// System.out.println("4. 장바구니에 항목 추가하기 : ");
-					menuCartAddItem(bookInfoList);
+					//menuCartAddItem(bookInfoList);
 					break;
 				case 5:
 					// System.out.println("5. 장바구니의 항목 수량 줄이기");
@@ -97,36 +99,52 @@ public class WelcomeBookMarket {
 	public static void menuGuestInfo(String name, String mobile) {
 		System.out.println("현재 고객 정보 : ");
 		// System.out.println("이름 : " + name + ", 연락처 : " + mobile);
-		Customer customer = new Customer(name, mobile);
-		System.out.println("이름 : " + customer.getName() + ", 연락처 : " + customer.getPhone());
+		// Customer customer = new Customer(name, mobile);
+		System.out.println("이름 : " + user.getName() + ", 연락처 : " + user.getPhone());
 	}
 
 	public static void menuCartItemList() {
-		System.out.println("장바구니 상품 목록 :");
-		System.out.println("---------------------------------------------");
-		System.out.println(" 도서ID \t| 수량 \t| 합계");
-		for (int i = 0; i < cartCount; i++) {
-			System.out.print(" " + cartItem[i].getBookID() + " \t| ");
-			System.out.print(" " + cartItem[i].getQuantity() + " \t| ");
-			System.out.print(" " + cartItem[i].getTotalPrice());
-			System.out.println(" ");
+//		System.out.println("장바구니 상품 목록 :");
+//		System.out.println("---------------------------------------------");
+//		System.out.println(" 도서ID \t| 수량 \t| 합계");
+//		for (int i = 0; i < cartCount; i++) {
+//			System.out.print(" " + cartItem[i].getBookID() + " \t| ");
+//			System.out.print(" " + cartItem[i].getQuantity() + " \t| ");
+//			System.out.print(" " + cartItem[i].getTotalPrice());
+//			System.out.println(" ");
+//		}
+//		System.out.println("---------------------------------------------");
+		if (cart.cartCount >= 0) {
+			cart.printCart();
 		}
-		System.out.println("---------------------------------------------");
+
 	}
 
 	public static void menuCartClear() {
-		System.out.println("장바구니 비우기");
+		// System.out.println("장바구니 비우기");
+		if (cart.cartCount == 0) {
+			System.out.println("장바구니에 항목이 없습니다");
+		} else {
+			System.out.println("장바구니에 모든 항목을 삭제하겠습니까? Y | N ");
+			Scanner input = new Scanner(System.in);
+			String str = input.nextLine();
+			if (str.toUpperCase().equals("Y") || str.toLowerCase().equals("y")) {
+				System.out.println("장바구니에 모든 항목을 삭제했습니다");
+				cart.deleteBook();
+			}
+		}
 	}
 
-	public static void menuCartAddItem(String[][] book) {
+	public static void menuCartAddItem(Book[] book) {
 		// System.out.println("장바구니에 항목 추가하기 : ");
 		bookList(book); // 도서 정보가 저장되어 있는 메서드 호출
-		// 도서 정보 출력
-		for (int i = 0; i < NUM_BOOK; i++) {
-			for (int j = 0; j < NUM_ITEM; j++)
-				System.out.print(book[i][j] + " | ");
-			System.out.println("");
-		}
+		/*
+		 * // 도서 정보 출력 for (int i = 0; i < NUM_BOOK; i++) { for (int j = 0; j <
+		 * NUM_ITEM; j++) System.out.print(book[i][j] + " | "); System.out.println("");
+		 * }
+		 */
+		
+		cart.printBookList(book);
 		boolean quit = false;
 		while (!quit) {
 			Scanner input = new Scanner(System.in);
@@ -137,7 +155,7 @@ public class WelcomeBookMarket {
 			for (int i = 0; i < NUM_BOOK; i++) {
 				// 입력한 도서ID와 저장되어 이쓴 도서 정보의 ID가 일치하면
 				// 인덱스 번호와 일치 여부 변수의 값을 변경한다.
-				if (inputStr.equals(book[i][0])) {
+				if (inputStr.equals(book[i].getBookId())) {
 					numId = i;
 					flag = true;
 					break;
@@ -148,10 +166,11 @@ public class WelcomeBookMarket {
 				System.out.println("장바구니에 추가하겠습니까? Y | N ");
 				inputStr = input.nextLine();
 				if (inputStr.toUpperCase().equals("Y") || inputStr.toLowerCase().equals("y")) {
-					System.out.println(book[numId][0] + " 도서가 장바구니에 추가되었습니다.");
+					System.out.println(book[numId].getBookId() + " 도서가 장바구니에 추가되었습니다.");
 					// 장바구니에 넣기
-					if (!isCartInBook(book[numId][0])) {
-						cartItem[cartCount++] = new CartItem(book[numId]);
+					if (!isCartInBook(book[numId].getBookId())) {
+						// cartItem[cartCount++] = new CartItem(book[numId]);
+						cart.insertBook(book[numId]);
 					}
 				}
 				quit = true;
@@ -166,7 +185,39 @@ public class WelcomeBookMarket {
 	}
 
 	public static void menuCartRemoveItem() {
-		System.out.println("6. 장바구니의 항목 삭제하기");
+		// System.out.println("6. 장바구니의 항목 삭제하기");
+		if (cart.cartCount == 0) {
+			System.out.println("장바구니에 항목이 없습니다");
+		} else {
+			menuCartItemList();
+			boolean quit = false;
+			while (!quit) {
+				System.out.print("장바구니에서 삭제할 도서의 ID를 입력하세요 :");
+				Scanner input = new Scanner(System.in);
+				String str = input.nextLine();
+				boolean flag = false;
+				int numId = -1;
+				for (int i = 0; i < cart.cartCount; i++) {
+					if (str.equals(cart.cartItem[i].getBookID())) {
+						numId = i;
+						flag = true;
+						break;
+					}
+				}
+				if (flag) {
+					System.out.println("장바구니의 항목을 삭제하겠습니까? Y | N ");
+					str = input.nextLine();
+					if (str.toUpperCase().equals("Y") || str.toLowerCase().equals("y")) {
+						System.out.println(cart.cartItem[numId].getBookID() + "장바구니에서 도서가 삭제되었습니다.");
+						cart.removeCart(numId);
+					}
+					quit = true;
+				} else {
+					System.out.println("다시 입력해 주세요");
+				}
+			}
+		}
+
 	}
 
 	public static void menuCartBill() {
@@ -177,46 +228,36 @@ public class WelcomeBookMarket {
 		System.out.println("8. 종료");
 	}
 
-	public static void bookList(String[][] book) {
-		book[0][0] = "book1";
-		book[0][1] = "ISBN 978-89-01-26726-5";
-		book[0][2] = "빅 히스토리";
-		book[0][3] = "33000";
-		book[0][4] = "데이비드 크리스천";
-		book[0][5] = "우주와 지구, 인간을 하나로 잇는 새로운 역사";
-		book[0][6] = "인문 교양";
-		book[0][7] = "2022/12/23";
-		book[1][0] = "book2";
-		book[1][1] = "ISBN 979-11-6921-062-1";
-		book[1][2] = "SICP";
-		book[1][3] = "45000";
-		book[1][4] = "해럴드 에이블슨, 류광";
-		book[1][5] = "컴퓨터 프로그래밍의 구조와 해석";
-		book[1][6] = "개발 방법론";
-		book[1][7] = "2022/12/30";
-		book[2][0] = "book3";
-		book[2][1] = "ISBN 978-89-6626-366-0";
-		book[2][2] = "러스트 프로그래밍";
-		book[2][3] = "35000";
-		book[2][4] = "팀 맥나마라, 장연호";
-		book[2][5] = "러스트는 시스템 프로그래밍에 적합한 언어";
-		book[2][6] = "프로그래밍 언어";
-		book[2][7] = "2022/07/08";
-	}
+	public static void bookList(Book[] book) {
+		 book[0] = new Book("book1", "ISBN 978-89-01-26726-5", "빅 히스토리", 33000);
+		 book[0].setAuthor("데이비드 크리스천");
+		 book[0].setDescription("우주와 지구, 인간을 하나로 잇는 새로운 역사");
+		 book[0].setCategory("인문 교양");
+		 book[0].setReleaseDate("2022/12/23");
+		 book[1] = new Book("book2","ISBN 979-11-6921-062-1","SICP", 45000);
+		 book[1].setAuthor("해럴드 에이블슨, 류광");
+		 book[1].setDescription("컴퓨터 프로그래밍의 구조와 해석");
+		 book[1].setCategory("개발 방법론");
+		 book[1].setReleaseDate("2022/12/30");
+		 book[2] = new Book("book3", "ISBN 978-89-6626-366-0", "러스트 프로그래밍", 
+		35000);
+		 book[2].setAuthor("팀 맥나마라, 장연호");
+		 book[2].setDescription("러스트는 시스템 프로그래밍에 적합한 언어");
+		 book[2].setCategory("프로그래밍 언어");
+		 book[2].setReleaseDate("2022/07/08");
+		 }
 
-	// 도서 ID 확인
+	// 장바구니의 도서 ID 존재 여부 확인
 	public static boolean isCartInBook(String bookId) {
-		boolean flag = false;
-		for (int i = 0; i < cartCount; i++) {
-			if (bookId == cartItem[i].getBookID()) {
-				cartItem[i].setQuantity(cartItem[i].getQuantity() + 1);
-				flag = true;
-			}
-		}
-		return flag;
+		/*
+		 * boolean flag = false; for (int i = 0; i < cartCount; i++) { if (bookId ==
+		 * cartItem[i].getBookID()) { cartItem[i].setQuantity(cartItem[i].getQuantity()
+		 * + 1); flag = true; } } return flag;
+		 */
+		return cart.isCartInBook(bookId);
 	}
 
-	// ㄱ 관리자 로그인 정보 확인 메서드
+	// 관리자 로그인 정보 확인 메서드
 	public static void menuAdminLogin() {
 		System.out.println("관리자 정보를 입력하세요");
 
