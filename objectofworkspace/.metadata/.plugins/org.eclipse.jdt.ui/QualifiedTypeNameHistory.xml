@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="Loan"/>
-    <fullyQualifiedTypeName name="Course"/>
     <fullyQualifiedTypeName name="CellPhone"/>
     <fullyQualifiedTypeName name="BankAccount"/>
     <fullyQualifiedTypeName name="java.awt.desktop.ScreenSleepEvent"/>
@@ -13,7 +11,6 @@
     <fullyQualifiedTypeName name="com.kumho.Tire"/>
     <fullyQualifiedTypeName name="practice.Singleton"/>
     <fullyQualifiedTypeName name="Parent"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="javax.sound.sampled.TargetDataLine"/>
     <fullyQualifiedTypeName name="Circle"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -49,7 +46,6 @@
     <fullyQualifiedTypeName name="driver.Taxi"/>
     <fullyQualifiedTypeName name="driver.Vehicle"/>
     <fullyQualifiedTypeName name="com.market.member.User"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.market.member.Admin"/>
     <fullyQualifiedTypeName name="com.market.bookitem.item"/>
     <fullyQualifiedTypeName name="com.market.bookitem.Book"/>
@@ -57,4 +53,11 @@
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="ProductImpl"/>
     <fullyQualifiedTypeName name="Delinquency"/>
+    <fullyQualifiedTypeName name="remoteControl.RemoteControl"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.market.exception.CartException"/>
 </qualifiedTypeNameHistroy>
