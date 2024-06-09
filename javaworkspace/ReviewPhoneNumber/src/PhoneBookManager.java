@@ -6,13 +6,16 @@ public class PhoneBookManager {
 	int curCnt = 0;
 	static PhoneBookManager inst = null;
 
-	public void inputData() {
+	public void inputData() throws MenuChoiceException {
 		System.out.println("데이터 입력을 시작합니다..");
 		System.out.println("1. 일반, 2. 대학, 3. 회사");
 		System.out.print("선택>> ");
 		int choice = MenuViewer.keyboard.nextInt();
 		MenuViewer.keyboard.nextLine();
 		PhoneInfo info = null;
+		if (choice < INPUT_SELECT.NORMAL || choice > INPUT_SELECT.COMPANY) {
+			throw new MenuChoiceException(choice);
+		}
 		switch (choice) {
 		case INPUT_SELECT.NORMAL:
 			info = readFriendInfo();

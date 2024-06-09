@@ -6,22 +6,29 @@ public class PhoneMain {
 		PhoneBookManager manager = PhoneBookManager.createManagerInst();
 		int choice;
 		while (true) {
-			MenuViewer.showMenu();
-			choice = MenuViewer.keyboard.nextInt();
-			MenuViewer.keyboard.nextLine();
-			switch (choice) {
-			case INIT_MENU.INPUT:
-				manager.inputData();
-				break;
-			case INIT_MENU.SEARCH:
-				manager.searchData();
-				break;
-			case INIT_MENU.DELETE:
-				manager.deleteData();
-				break;
-			case INIT_MENU.EXIT:
-				System.out.println("프로그램을 종료합니다.");
-				return;
+			try {
+				MenuViewer.showMenu();
+				choice = MenuViewer.keyboard.nextInt();
+				MenuViewer.keyboard.nextLine();
+				if (choice < INIT_MENU.INPUT || choice > INIT_MENU.EXIT)
+					throw new MenuChoiceException(choice);
+				switch (choice) {
+				case INIT_MENU.INPUT:
+					manager.inputData();
+					break;
+				case INIT_MENU.SEARCH:
+					manager.searchData();
+					break;
+				case INIT_MENU.DELETE:
+					manager.deleteData();
+					break;
+				case INIT_MENU.EXIT:
+					System.out.println("프로그램을 종료합니다.");
+					return;
+				}
+			} catch (MenuChoiceException e) {
+				e.showWrongChoice();
+				System.out.println("메뉴 선택을 처음부터 다시 진행합니다.\n");
 			}
 		}
 	}
