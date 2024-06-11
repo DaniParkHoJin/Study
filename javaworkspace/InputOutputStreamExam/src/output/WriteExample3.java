@@ -11,12 +11,12 @@ public class WriteExample3 {
 			OutputStream os = new FileOutputStream("D:/javaproject/javaworkspace/InputOutputStreamExam/Temp/test3.db");
 
 			byte[] array = { 10, 20, 30, 40, 50 };
-			
+
 			os.write(array, 1, 3);
-			
+
 			os.flush();
 			os.close();
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
