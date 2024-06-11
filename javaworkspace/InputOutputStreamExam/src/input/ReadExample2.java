@@ -1,4 +1,4 @@
-package Input;
+package input;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,7 +19,7 @@ public class ReadExample2 {
 				if (num == -1)
 					break;
 
-				for (int i = 0; i < num ; i++) {
+				for (int i = 0; i < num; i++) {
 					System.out.println(data[i]);
 				}
 			}

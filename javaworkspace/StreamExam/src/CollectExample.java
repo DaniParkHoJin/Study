@@ -26,6 +26,7 @@ public class CollectExample {
 		// 학생 이름을 키, 학생의 점수 값으로 갖는 Map 생성
 		Map<String, Integer> map = totalList.stream().collect(Collectors.toMap(s-> s.getName(), s-> s.getScore()));
 		System.out.println(map);
+		
 	}
 
 }

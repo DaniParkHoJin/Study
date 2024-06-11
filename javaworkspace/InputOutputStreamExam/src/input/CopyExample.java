@@ -1,4 +1,4 @@
-package Input;
+package input;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ public class CopyExample {
 
 		InputStream is = new FileInputStream(originalFileName);
 		OutputStream os = new FileOutputStream(targetFileName);
-		
+
 		byte[] data = new byte[1024];
 		while (true) {
 			int num = is.read(data);
@@ -21,8 +21,6 @@ public class CopyExample {
 			os.write(data, 0, num);
 		}
 //		is.transferTo(os); 자바 9 부터 더 편리하게 복사 할 수 있게 된 메소드
-
-		
 
 		os.flush();
 		os.close();
