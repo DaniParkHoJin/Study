@@ -1,4 +1,4 @@
-package Input;
+package input;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,13 +13,13 @@ public class ReadExample1 {
 
 			while (true) {
 				int data = is.read();
-				if (data == -1) break;
+				if (data == -1)
+					break;
 				System.out.println(data);
 			}
-			
+
 			is.close();
-			
-			
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
