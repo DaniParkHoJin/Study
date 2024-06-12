@@ -8,7 +8,7 @@ public class WriteExample1 {
 
 	public static void main(String[] args) {
 		try {
-			OutputStream os = new FileOutputStream("D:/javaproject/javaworkspace/InputOutputStreamExam/Temp/test1.db");
+			OutputStream os = new FileOutputStream("Temp/test1.db");
 			byte a = 10;
 			byte b = 20;
 			byte c = 30;
