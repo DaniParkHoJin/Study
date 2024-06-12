@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PhoneMain {
+public class PhoneBookTest {
 
 	public static void main(String[] args) {
 		PhoneBookManager manager = PhoneBookManager.createManagerInst();
@@ -23,6 +23,7 @@ public class PhoneMain {
 					manager.deleteData();
 					break;
 				case INIT_MENU.EXIT:
+					manager.storeToFile();
 					System.out.println("프로그램을 종료합니다.");
 					return;
 				}

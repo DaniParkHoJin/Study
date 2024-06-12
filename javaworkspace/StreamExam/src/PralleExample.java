@@ -11,32 +11,32 @@ public class PralleExample {
 		for (int i = 0; i < 1000000000; i++) {
 			scores.add(random.nextInt(101));
 		}
-		
+
 		double avg;
 		long startTime;
 		long endTime;
 		long time;
-		
+
 		avg = 0.0;
 		startTime = 0;
 		endTime = 0;
 		time = 0;
-		
+
 		Stream<Integer> stream = scores.stream();
 		startTime = System.nanoTime();
 		avg = stream.mapToInt(i -> i.intValue()).average().getAsDouble();
 		endTime = System.nanoTime();
 		time = endTime - startTime;
 		System.out.println("avg: " + avg + ", 일반 스트림 처리 시간: " + time + "ns");
-		
+
 		Stream<Integer> paralleStream = scores.parallelStream();
 		startTime = System.nanoTime();
 		avg = paralleStream.mapToInt(i -> i.intValue()).average().getAsDouble();
 		endTime = System.nanoTime();
-		
-		time = endTime-startTime;
+
+		time = endTime - startTime;
 		System.out.println("avg: " + avg + ", 병렬 스트림 처리 시간: " + time + "ns");
-		
+
 	}
 
 }

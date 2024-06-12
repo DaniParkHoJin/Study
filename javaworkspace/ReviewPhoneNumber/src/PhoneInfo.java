@@ -1,9 +1,15 @@
+import java.io.Serializable;
 
-public class PhoneInfo {
+public class PhoneInfo implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4676398795181843053L;
 	// 필드
 	private String name; // 이름
 	private String phoneNumber; // 전화번호
 	// 생성자
+
 	public PhoneInfo() {
 		super();
 	}
@@ -37,13 +43,26 @@ public class PhoneInfo {
 
 	@Override
 	public String toString() {
-		return "PhoneInfo [name=" + name + ", phoneNumber=" + phoneNumber +"]";
+		return "PhoneInfo [name=" + name + ", phoneNumber=" + phoneNumber + "]";
 	}
 
 	public void showPhoneInfo() {
-		System.out.println("name : " + this.name);
-		System.out.println("phone : " + this.phoneNumber);
-		
+		System.out.println("name : " + name);
+		System.out.println("phone : " + phoneNumber);
+
+	}
+
+	public int hashCode() {
+		return name.hashCode();
+
+	}
+
+	public boolean equals(Object obj) {
+		PhoneInfo cmp = (PhoneInfo) obj;
+		if (name.compareTo(cmp.name) == 0)
+			return true;
+		else
+			return false;
 	}
 
 }
