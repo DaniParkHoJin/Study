@@ -1,5 +1,9 @@
 
 public class PhoneCompanyInfo extends PhoneInfo {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4158439095548966573L;
 	private String company;
 
 	public PhoneCompanyInfo() {

@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-public class ReadExampl3 {
+public class ReadExample3 {
 
 	public static void main(String[] args) {
 		try {
@@ -13,7 +13,7 @@ public class ReadExampl3 {
 
 			// 1 문자씩 읽기
 
-			reader = new FileReader("D:/javaproject/javaworkspace/InputOutputStreamExam/Temp/test.txt");
+			reader = new FileReader("D:/javaproject/javaworkspace/InputOutputStreamExam/Temp/test2.db");
 			while (true) {
 				int data = reader.read();
 				if (data == -1)
@@ -25,7 +25,7 @@ public class ReadExampl3 {
 
 			// 문자 배열로 읽기
 
-			reader = new FileReader("D:/javaproject/javaworkspace/InputOutputStreamExam/Temp/test.txt");
+			reader = new FileReader("D:/javaproject/javaworkspace/InputOutputStreamExam/Temp/test2.db");
 			char[] data = new char[100];
 
 			while (true) {
