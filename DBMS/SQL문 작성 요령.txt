@@ -1,0 +1,13 @@
+sql 문 작성 요령
+
+select
+
+from
+
+where
+
+order by
+
+먼저 기본 형식을 적은 후
+
+들어가야하는 것을 맞춰 넣으면 된다.
