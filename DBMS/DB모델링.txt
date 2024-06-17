@@ -40,3 +40,8 @@ mysql
 
 root
 1234
+
+
+Index of /mysql/Downloads/MySQL-Notifier/
+
+mysql-notifier-1.1.8.msi
