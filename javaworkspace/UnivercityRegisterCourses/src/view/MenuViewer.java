@@ -15,7 +15,7 @@ public class MenuViewer {
 		System.out.println("4. 수강 신청 목록/신청/취소");
 		System.out.println("5. 프로그램 종료");
 		System.out.println();
-		System.out.print("번호 선택 :");
+		System.out.print("번호 선택 : ");
 		
 	}
 	// 학과 메뉴
@@ -28,7 +28,7 @@ public class MenuViewer {
 		System.out.println("4. 학과 정보 삭제");
 		System.out.println("5. 메인 메뉴");
 		System.out.println();
-		System.out.print("번호 선택 :");
+		System.out.print("번호 선택 : ");
 		
 	}
 	// 학생 메뉴
@@ -40,7 +40,7 @@ public class MenuViewer {
 		System.out.println("3. 학생 전체 목록");
 		System.out.println("4. 메인 메뉴");
 		System.out.println();
-		System.out.print("번호 선택 :");
+		System.out.print("번호 선택 : ");
 	}
 	// 과목 메뉴
 	public static void lessonMenuView() {
@@ -52,7 +52,7 @@ public class MenuViewer {
 		System.out.println("4. 과목 전체 삭제");
 		System.out.println("5. 메인 메뉴");
 		System.out.println();
-		System.out.print("번호 선택 :");
+		System.out.print("번호 선택 : ");
 	}
 	// 수강 신청 메뉴
 		public static void traineeMenuView() {
@@ -63,7 +63,7 @@ public class MenuViewer {
 			System.out.println("3. 수강 취소");
 			System.out.println("4. 메인 메뉴");
 			System.out.println();
-			System.out.print("번호 선택 :");
+			System.out.print("번호 선택 : ");
 		}
 
 }

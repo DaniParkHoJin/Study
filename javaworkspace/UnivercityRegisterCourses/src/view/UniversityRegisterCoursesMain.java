@@ -13,27 +13,32 @@ public class UniversityRegisterCoursesMain {
 
 	private static void mainMenu() {
 		int choiceNum;
+		try {
+			MenuViewer.mainMenuView();
+			choiceNum = MenuViewer.choice.nextInt();
+			MenuViewer.choice.nextLine();
 
-		MenuViewer.mainMenuView();
-		choiceNum = MenuViewer.choice.nextInt();
-		MenuViewer.choice.nextLine();
-
-		switch (choiceNum) {
-		case MENU_CHOICE.SUBJECT:
-			subjectMenu();
-			break;
-		case MENU_CHOICE.STUDENT:
-			studentMenu();
-			break;
-		case MENU_CHOICE.LESSON:
-			lessonMenu();
-			break;
-		case MENU_CHOICE.TRAINEE:
-			traineeMenu();
-			break;
-		default:
-			break;
+			switch (choiceNum) {
+			case MENU_CHOICE.SUBJECT:
+				subjectMenu();
+				break;
+			case MENU_CHOICE.STUDENT:
+				studentMenu();
+				break;
+			case MENU_CHOICE.LESSON:
+				lessonMenu();
+				break;
+			case MENU_CHOICE.TRAINEE:
+				traineeMenu();
+				break;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			System.out.println("\n입력에 오류가 있습니다.\n 프로그램을 다시 시작하세요.");
+			return;
 		}
+
 	}
 
 	// 수강 신청 메뉴
@@ -129,7 +134,7 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 학과 메뉴
-	private static void subjectMenu() {
+	private static void subjectMenu() throws Exception {
 		int choice;
 
 		SubjectRegisterManager subjectManager = new SubjectRegisterManager();
