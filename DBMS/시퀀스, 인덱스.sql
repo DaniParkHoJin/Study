@@ -1,0 +1,93 @@
+-- 시퀀스, 인덱스
+-- 시퀀스는 유일한 값을 생성해주는 오라클 객체이다.
+-- 한 테이블 한 시퀀스만 사용해야 함으로 이름에 테이블명을 넣어서 구분해야 한다.
+CREATE SEQUENCE EMP_SEQ
+    START WITH 0
+    INCREMENT BY 1
+    MINVALUE 0
+    MAXVALUE 100000
+    NOCYCLE
+    CACHE 2;
+
+CREATE TABLE EMP01
+AS
+SELECT EMPLOYEE_ID, FIRST_NAME, HIRE_DATE
+FROM EMPLOYEES
+WHERE 1 = 0;
+
+SELECT *
+FROM EMP01;
+
+INSERT INTO EMP01
+VALUES (EMP_SEQ.NEXTVAL, 'JULIA', sysdate);
+-- 시퀀스의 현재 값을 알아봄
+SELECT EMP_seq.CURRVAL
+FROM DUAL;
+
+-- nextval, currval 을 사용할 수 있는 경우, 없는 경우를 잘 살펴봐야함.
+
+
+CREATE TABLE dept01
+AS
+SELECT DEPARTMENT_ID, DEPARTMENT_NAME, LOCATION_ID
+FROM DEPARTMENTS
+WHERE 1 = 0;
+
+CREATE SEQUENCE dept_seq
+START WITH 10
+INCREMENT BY 10
+MINVALUE 0
+MAXVALUE 30;
+
+INSERT INTO DEPT01
+VALUES (DEPT_SEQ.NEXTVAL, '인사과', 2);
+
+INSERT INTO DEPT01
+VALUES (DEPT_SEQ.NEXTVAL, '총무과', 42);
+
+INSERT INTO DEPT01
+VALUES (DEPT_SEQ.NEXTVAL, '교육팀', 32);
+
+SELECT *
+FROM dept01;
+-- 시퀀스가 NOCYCLE 상태이므로 MAXVALUE 값을 초과하게 되면 오류
+INSERT INTO DEPT01
+VALUES (DEPT_SEQ.NEXTVAL, '기술팀', 44);
+
+-- 시퀀스에 관한 데이터 딕셔너리 USER_SEQENCES
+SELECT SEQUENCE_NAME, MIN_VALUE, MAX_VALUE, INCREMENT_BY, CYCLE_FLAG
+FROM USER_SEQUENCES;
+
+-- 시퀀스 값을 변경하려면 ALTER SEQUENCE 문을 사용하면 된다.
+-- 시퀀스 값을 삭제 하려면 DROP SEQUENCE 를 사용한다.
+DROP SEQUENCE DEPT_SEQ;
+
+-- 인덱스
+-- 테이블에 있는 데이터를 빨리 찾기 위한 용도의 데이터베이스 객체다
+-- 장점 : 검색 속도가 빨라진다. 시스템에 걸리는 부하를 줄여서 시스템 전체 성능을 향상시킨다.
+-- 단점 : 인덱스를 위한 추가적인 공간이 필요하다. 인덱스를 생성하는데 시간이 걸린다. 데이터의 변경 작업이 자주 일어날 경우에는 오히려 성능이 저하된다.
+
+CREATE TABLE EMP01
+AS SELECT *
+FROM EMPLOYEES;
+
+SELECT TABLE_NAME, INDEX_NAME, COLUMN_NAME
+FROM USER_IND_COLUMNS
+WHERE TABLE_NAME IN('EMPLOYEES', 'EMP01');
+
+SELECT *
+FROM EMP01
+WHERE EMPLOYEE_ID = 188;
+
+-- 제약 조건에 의해 자동으로 생성되는 인덱스 외에 CREATE UNIQUE INDEX 명령어로 직접 인덱스를 생성 할 수 있다.
+CREATE UNIQUE INDEX INDEX_EMPNO_EMP
+ON EMP01(EMPLOYEE_ID);
+
+SELECT INDEX_NAME, TABLE_NAME, UNIQUENESS
+FROM USER_INDEXES
+WHERE TABLE_NAME IN('EMPLOYEES', 'EMP01');
+
+-- 인덱스 삭제는 DROP INDEX 명령어를 사용한다.
+DROP INDEX INDEX_EMPNO_EMP;
+
+-- 인덱스를 생성할 때 고려해야 할 사항은 PDF참조
