@@ -1,0 +1,82 @@
+-- 트랜젝션 관리
+-- 데이터베이스의 상태를 변경시키기 위해 수행하는 작업 단위로서 모두 실행되거나 모두 실패한다.
+-- 데이터의 일관성을 유지하고 안정적으로 데이터를 복구시키기 위해서
+
+-- commit 모든 작업들을 정상적으로 처리하겠다고 확정하는 명령어. 트랜젝션 과정을 종료시키고 새로 시작하게 함.
+-- rollback  작업 중 문제가 발생하여 트랜잭션의 처리 과정에서 발생한 변경사항을 취소하는 명령어
+
+
+CREATE TABLE DEPT02 -- 서브쿼리로 테이블 복사
+AS
+SELECT *
+FROM DEPARTMENTS;
+
+SELECT *
+FROM DEPT02;
+
+DELETE
+FROM DEPT02;
+
+ROLLBACK;
+
+DELETE
+FROM DEPT02
+WHERE DEPARTMENT_ID = 20;
+COMMIT;
+ROLLBACK;
+
+SELECT *
+FROM DEPT02;
+
+DROP TABLE DEPT02;
+
+CREATE TABLE DEPT02
+AS
+SELECT *
+FROM DEPARTMENTS;
+
+SELECT *
+FROM DEPT02;
+
+DELETE
+FROM DEPT02
+WHERE DEPARTMENT_ID = 40;
+COMMIT;
+
+DELETE FROM DEPT02
+WHERE DEPARTMENT_ID = 30;
+
+SAVEPOINT C1;
+
+DELETE FROM DEPT02
+WHERE DEPARTMENT_ID = 20;
+
+SAVEPOINT C2;
+
+DELETE FROM DEPT02
+WHERE DEPARTMENT_ID = 10;
+
+SELECT *
+FROM DEPT02;
+
+ROLLBACK TO C1;
+
+ROLLBACK;
+
+-- SESSION
+-- 어떤 활동을 위한 시간이나 기간
+-- 세션이 트랜잭션보다 크다.
+
+SELECT *
+FROM DEPT02;
+
+DELETE FROM DEPT02
+WHERE DEPARTMENT_ID = 50;
+
+ROLLBACK;
+
+UPDATE DEPT02
+SET DEPARTMENT_NAME = '12323553467se'
+WHERE DEPARTMENT_ID = 60;
+
+COMMIT;
