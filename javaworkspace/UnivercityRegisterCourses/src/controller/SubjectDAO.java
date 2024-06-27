@@ -21,15 +21,14 @@ public class SubjectDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			System.out.printf("%-10s\t%-10s\t%-20s", "일련번호", "학과번호", "학과명");
+			System.out.printf("%-10s\t%-10s\t%-20s\n", "일련번호", "학과번호", "학과명");
 
 			while (rs.next()) {
 				svo = new SubjectVo();
 				svo.setNo(rs.getInt("no"));
 				svo.setS_num(rs.getString("s_num"));
 				svo.setS_name(rs.getString("s_name"));
-				System.out.println("----------------------------------");
-				System.out.printf("%-10s\t%-10s\t%-20s", svo.getNo(), svo.getS_num(), svo.getS_name());
+				System.out.printf("%-10s\t%-10s\t%-20s\n", svo.getNo(), svo.getS_num(), svo.getS_name());
 
 			}
 

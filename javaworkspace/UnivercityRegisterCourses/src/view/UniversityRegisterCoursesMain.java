@@ -103,7 +103,7 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 학생 메뉴
-	private static void studentMenu() {
+	private static void studentMenu() throws Exception{
 
 		int choice;
 
@@ -115,17 +115,17 @@ public class UniversityRegisterCoursesMain {
 		switch (choice) {
 		case STUDENT_CHOICE.INSERT:
 			System.out.println("");
-			studentManager.studentRegistr();
+			studentManager.studentRegistr();// 학생 정보 입력
 			break;
 		case STUDENT_CHOICE.UPDATE:
 			System.out.println("");
-			studentManager.studentUpdate();
+			studentManager.studentUpdate(); // 학생 정보 수정
 			break;
 		case STUDENT_CHOICE.LIST:
 			System.out.println("");
-			studentManager.studentList();
+			studentManager.studentList(); // 학생 전체 목록
 			break;
-		case STUDENT_CHOICE.MAIN:
+		case STUDENT_CHOICE.MAIN: // 메인 메뉴
 			return;
 		default:
 			System.out.println("해당 메뉴 번호만 입력하세요.");
