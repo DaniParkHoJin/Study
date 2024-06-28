@@ -41,6 +41,7 @@ public class LessonRegisterManager {
 		System.out.println("과목 전체 리스트");
 		ld.getLessonTotalList();
 		System.out.println();
+		input.close();
 		
 	}
 	// 과목 수정 관리
@@ -78,7 +79,8 @@ public class LessonRegisterManager {
 		System.out.println("과목 전체 리스트");
 		ld.getLessonTotalList();
 		System.out.println();
-		
+		inputNumber.close();
+		inputString.close();
 		
 	}
 	// 과목 삭제 관리
@@ -86,7 +88,6 @@ public class LessonRegisterManager {
 		Scanner input = new Scanner(System.in);
 		
 		LessonDAO ld = new LessonDAO();
-		LessonVo lvo = new LessonVo();
 		
 		int l_no; // 삭제할 과목 번호
 		
@@ -104,6 +105,7 @@ public class LessonRegisterManager {
 		System.out.println("학과 전체 리스트");
 		ld.getLessonTotalList();
 		System.out.println();
+		input.close();
 		
 	}
 
