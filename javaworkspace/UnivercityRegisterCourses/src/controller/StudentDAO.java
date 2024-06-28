@@ -56,7 +56,7 @@ public class StudentDAO {
 	// 동일 학과 학생 일련번호
 	public String getstudentCount(String subjectNum) throws Exception {
 
-		String sql = "select LPAD(conut(*)+1, 4, '0') as studentCount from student where s_num = ?";
+		String sql = "select LPAD(count(*)+1, 4, '0') as studentCount from student where s_num = ?";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -95,7 +95,7 @@ public class StudentDAO {
 
 	// 학생 등록
 	public void setStudentResiste(StudentVo svo) throws Exception {
-		String sql = "insert into student values (student_sql.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+		String sql = "insert into student values (student_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
