@@ -5,9 +5,9 @@ import java.util.Date;
 import java.util.Scanner;
 
 import model.StudentVo;
-
+	
 public class StudentRegisterManager {
-
+	// 학생 정보 등록
 	public void studentRegistr() throws Exception {
 		Scanner input = new Scanner(System.in);
 
@@ -51,7 +51,7 @@ public class StudentRegisterManager {
 		// 연도2자리 + 학과 2자리 + 일련번호
 		SimpleDateFormat sdf = new SimpleDateFormat("yy");
 		year = sdf.format(new Date());
-		sd_num = year + s_num + sd.getstudentCount(s_num);
+		sd_num = year + s_num + sd.getStudentCount(s_num);
 
 		System.out.print("생년월일(8자리) : ");
 		sd_birthday = input.nextLine();
@@ -65,7 +65,7 @@ public class StudentRegisterManager {
 		System.out.print("이메일 : ");
 		sd_email = input.nextLine();
 
-		svo.setS_num(s_num);
+		svo.setSd_num(sd_num);
 		svo.setSd_name(sd_name);
 		svo.setSd_id(sd_id);
 		svo.setSd_password(sd_password);

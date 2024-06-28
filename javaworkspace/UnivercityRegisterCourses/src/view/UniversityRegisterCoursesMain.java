@@ -12,31 +12,36 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	private static void mainMenu() {
-		int choiceNum;
-		try {
-			MenuViewer.mainMenuView();
-			choiceNum = MenuViewer.choice.nextInt();
-			MenuViewer.choice.nextLine();
 
-			switch (choiceNum) {
-			case MENU_CHOICE.SUBJECT:
-				subjectMenu();
-				break;
-			case MENU_CHOICE.STUDENT:
-				studentMenu();
-				break;
-			case MENU_CHOICE.LESSON:
-				lessonMenu();
-				break;
-			case MENU_CHOICE.TRAINEE:
-				traineeMenu();
-				break;
-			default:
-				break;
+		while (true) {
+			int choiceNum;
+			try {
+				MenuViewer.mainMenuView();
+				choiceNum = MenuViewer.choice.nextInt();
+				MenuViewer.choice.nextLine();
+
+				switch (choiceNum) {
+				case MENU_CHOICE.SUBJECT:
+					subjectMenu();
+					break;
+				case MENU_CHOICE.STUDENT:
+					studentMenu();
+					break;
+				case MENU_CHOICE.LESSON:
+					lessonMenu();
+					break;
+				case MENU_CHOICE.TRAINEE:
+					traineeMenu();
+					break;
+				case MENU_CHOICE.EXIT:
+					return;
+				default:
+					System.out.println("해당 메뉴 번호만 입력하세요.");
+				}
+			} catch (Exception e) {
+				System.out.println("\n입력에 오류가 있습니다.\n 프로그램을 다시 시작하세요.");
+				return;
 			}
-		} catch (Exception e) {
-			System.out.println("\n입력에 오류가 있습니다.\n 프로그램을 다시 시작하세요.");
-			return;
 		}
 
 	}
@@ -56,7 +61,7 @@ public class UniversityRegisterCoursesMain {
 			break;
 		case TRAINEE_CHOICE.INSERT:
 			System.out.println("");
-			traineeManager.traineeInsert();
+			traineeManager.traineeRegistr();
 			break;
 		case TRAINEE_CHOICE.DELETE:
 			System.out.println("");
@@ -70,7 +75,7 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 과목 메뉴
-	private static void lessonMenu() {
+	private static void lessonMenu() throws Exception {
 		int choice;
 		LessonRegisterManager lessonManager = new LessonRegisterManager();
 		MenuViewer.lessonMenuView();
@@ -84,7 +89,7 @@ public class UniversityRegisterCoursesMain {
 			break;
 		case LESSON_CHOICE.INSERT:
 			System.out.println("");
-			lessonManager.lessonInsert();
+			lessonManager.lessonRegistr();
 			break;
 		case LESSON_CHOICE.UPDATE:
 			System.out.println("");
@@ -103,7 +108,7 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 학생 메뉴
-	private static void studentMenu() throws Exception{
+	private static void studentMenu() throws Exception {
 
 		int choice;
 
@@ -149,7 +154,7 @@ public class UniversityRegisterCoursesMain {
 			break;
 		case SUBJECT_CHOICE.INSERT:
 			System.out.println("");
-			subjectManager.subjectInsert();
+			subjectManager.subjectRegistr();
 			break;
 		case SUBJECT_CHOICE.UPDATE:
 			System.out.println("");

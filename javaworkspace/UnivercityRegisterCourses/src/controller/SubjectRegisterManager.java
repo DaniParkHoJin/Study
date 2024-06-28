@@ -13,7 +13,7 @@ public class SubjectRegisterManager {
 		System.out.println();
 	}
 	// 학과 등록 관리
-	public void subjectInsert() throws Exception{
+	public void subjectRegistr() throws Exception{
 		Scanner input = new Scanner(System.in);
 		
 		SubjectDAO sd = new SubjectDAO();

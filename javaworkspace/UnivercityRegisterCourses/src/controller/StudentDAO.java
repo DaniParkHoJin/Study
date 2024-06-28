@@ -54,7 +54,7 @@ public class StudentDAO {
 	}
 
 	// 동일 학과 학생 일련번호
-	public String getstudentCount(String subjectNum) throws Exception {
+	public String getStudentCount(String subjectNum) throws Exception {
 
 		String sql = "select LPAD(count(*)+1, 4, '0') as studentCount from student where s_num = ?";
 
@@ -142,7 +142,7 @@ public class StudentDAO {
 
 	// 학생 정보
 	public void getStudent(String id, String pw) throws Exception {
-		String sql = "select * from student where sd_id = ? and sd_password = ?;";
+		String sql = "select * from student where sd_id = ? and sd_password = ?";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -337,8 +337,8 @@ public class StudentDAO {
 	}
 	// 학생 전체 목록
 	public void getStudentTotalList() {
-		String sql = "SELECT ST.NO AS NO, SD_NUM, SD_NAME, SD_ID, SD_PASSWORD, SU.S_NAME, SD_BIRTHDAY, SD_PHONE, SD_ADDRESS, SD_EMAIL, SD_DATE"
-				+ " FROM STUDENT ST, SUBJECT SU" + " WHERE ST.S_NUM = SU.S_NUM" + " ORDER BY NO";
+		String sql = "select st.no as no, sd_num, sd_name, sd_id, sd_password, su.s_name as s_num, sd_birthday, sd_phone, sd_address, sd_email, sd_date"
+						+ " from STUDENT st, SUBJECT su where st.s_num = su.s_num order by no" ;
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
