@@ -2,7 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
-import model.LessonVo;
+import model.LessonVO;
 
 public class LessonRegisterManager {
 	// 과목 목록
@@ -16,7 +16,7 @@ public class LessonRegisterManager {
 	public void lessonRegistr() throws Exception {
 		Scanner input = new Scanner(System.in);
 		LessonDAO ld = new LessonDAO();
-		LessonVo lvo = new LessonVo();
+		LessonVO lvo = new LessonVO();
 		
 		String l_abbre; // 과목약어
 		String l_name; // 과목명
@@ -50,7 +50,7 @@ public class LessonRegisterManager {
 		Scanner inputString = new Scanner(System.in);
 		
 		LessonDAO ld = new LessonDAO();
-		LessonVo lvo = new LessonVo();
+		LessonVO lvo = new LessonVO();
 		
 		int l_no; // 수정할 과목 일련번호
 		String l_abbre; // 수정할 과목 약어

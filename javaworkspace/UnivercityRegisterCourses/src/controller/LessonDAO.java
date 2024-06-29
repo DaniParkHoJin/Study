@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.LessonVo;
+import model.LessonVO;
 
 public class LessonDAO {
 	// 과목 전체 조회
@@ -14,7 +14,7 @@ public class LessonDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		LessonVo lvo = null;
+		LessonVO lvo = null;
 
 		try {
 			con = DBUtil.getConnection();
@@ -24,7 +24,7 @@ public class LessonDAO {
 			System.out.printf("%-10s%-10s%-15s\n", "일련번호", "과목약어", "과목명");
 
 			while (rs.next()) {
-				lvo = new LessonVo();
+				lvo = new LessonVO();
 				lvo.setNo(rs.getInt("no"));
 				lvo.setL_abbre(rs.getString("l_abbre"));
 				lvo.setL_name(rs.getString("l_name"));
@@ -53,7 +53,7 @@ public class LessonDAO {
 	}
 
 	// 과목 등록
-	public void setLessonRegiste(LessonVo lvo) {
+	public void setLessonRegiste(LessonVO lvo) {
 		String sql = "insert into lesson " + "(no, l_abbre, l_name)" + " values" + "(lesson_seq.nextval, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -92,7 +92,7 @@ public class LessonDAO {
 	}
 
 	// 과목 수정
-	public void setLessonUpdate(LessonVo lvo) throws Exception {
+	public void setLessonUpdate(LessonVO lvo) throws Exception {
 		String sql = "update lesson set l_abbre=?, l_name=? where no = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;

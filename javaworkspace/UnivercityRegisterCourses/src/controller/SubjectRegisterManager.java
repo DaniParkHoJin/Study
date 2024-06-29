@@ -2,7 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
-import model.SubjectVo;
+import model.SubjectVO;
 
 public class SubjectRegisterManager {
 	// 학과 목록
@@ -17,7 +17,7 @@ public class SubjectRegisterManager {
 		Scanner input = new Scanner(System.in);
 		
 		SubjectDAO sd = new SubjectDAO();
-		SubjectVo svo = new SubjectVo();
+		SubjectVO svo = new SubjectVO();
 		
 		String s_num; // 학과번호
 		String s_name; // 학과이름
@@ -49,7 +49,7 @@ public class SubjectRegisterManager {
 		Scanner inputString = new Scanner(System.in);
 		
 		SubjectDAO sd = new SubjectDAO();
-		SubjectVo svo = new SubjectVo();
+		SubjectVO svo = new SubjectVO();
 		
 		int s_no; // 입력한 일련번호
 		String s_num; // 학과 번호
@@ -90,7 +90,7 @@ public class SubjectRegisterManager {
 		Scanner input = new Scanner(System.in);
 		
 		SubjectDAO sd = new SubjectDAO();
-		SubjectVo svo = new SubjectVo();
+		SubjectVO svo = new SubjectVO();
 		
 		int s_no; // 입력한 일련번호
 		
