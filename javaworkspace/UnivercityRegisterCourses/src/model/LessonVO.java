@@ -1,18 +1,18 @@
 package model;
 
-public class LessonVo {
+public class LessonVO {
 	// 필드 선언
 	private int no; // 과목 일련번호
 	private String l_abbre; // 과목 약어
 	private String l_name; // 과목명
 
 	// 기본 생성자
-	public LessonVo() {
+	public LessonVO() {
 		super();
 	}
 
 	// 모든 필드를 받는 생성자
-	public LessonVo(int no, String l_abbre, String l_name) {
+	public LessonVO(int no, String l_abbre, String l_name) {
 		super();
 		this.no = no;
 		this.l_abbre = l_abbre;

@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.SubjectVo;
+import model.SubjectVO;
 
 public class SubjectDAO {
 	// 학과 목록
@@ -14,7 +14,7 @@ public class SubjectDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		SubjectVo svo = null;
+		SubjectVO svo = null;
 
 		try {
 			con = DBUtil.getConnection();
@@ -24,7 +24,7 @@ public class SubjectDAO {
 			System.out.printf("%-10s\t%-10s\t%-20s\n", "일련번호", "학과번호", "학과명");
 
 			while (rs.next()) {
-				svo = new SubjectVo();
+				svo = new SubjectVO();
 				svo.setNo(rs.getInt("no"));
 				svo.setS_num(rs.getString("s_num"));
 				svo.setS_name(rs.getString("s_name"));
@@ -54,7 +54,7 @@ public class SubjectDAO {
 	}
 
 	// 학과 등록
-	public void getSubjectRegiste(SubjectVo svo) throws Exception {
+	public void getSubjectRegiste(SubjectVO svo) throws Exception {
 		String sql = "insert into subject(no, s_num, s_name) values(subject_seq.nextval, ?, ?)";
 
 		Connection con = null;
@@ -98,7 +98,7 @@ public class SubjectDAO {
 	}
 
 	// 학과 수정
-	public void setSubjectUpdate(SubjectVo svo) throws Exception {
+	public void setSubjectUpdate(SubjectVO svo) throws Exception {
 
 		String sql = "update subject set s_num=?, s_name=? where no=?";
 		Connection con = null;

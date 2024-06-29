@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class traineeVo {
+public class TraineeVO {
 	// 필드 선언
 	private int no;	// 수강 일련번호
 	private String sd_num; // 학번
@@ -10,11 +10,11 @@ public class traineeVo {
 	private String t_section; // 과목 구분
 	private String t_date; // 등록일
 	// 생성자
-	public traineeVo() {
+	public TraineeVO() {
 		super();
 	}
 	// 모든 필드를 생성자
-	public traineeVo(int no, String sd_num, String l_abbre, String t_section, String t_date) {
+	public TraineeVO(int no, String sd_num, String l_abbre, String t_section, String t_date) {
 		super();
 		this.no = no;
 		this.sd_num = sd_num;

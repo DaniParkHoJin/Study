@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.naming.spi.DirStateFactory.Result;
-
-import model.StudentVo;
+import model.StudentVO;
 
 public class StudentDAO {
 
@@ -94,7 +92,7 @@ public class StudentDAO {
 	}
 
 	// 학생 등록
-	public void setStudentResiste(StudentVo svo) throws Exception {
+	public void setStudentResiste(StudentVO svo) throws Exception {
 		String sql = "insert into student values (student_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 
 		Connection con = null;
@@ -147,7 +145,7 @@ public class StudentDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		StudentVo svo = null;
+		StudentVO svo = null;
 
 		try {
 			con = DBUtil.getConnection();
@@ -160,7 +158,7 @@ public class StudentDAO {
 					"아이디", "비밀번호", "학과", "생년월일", "전화번호", "주소", "이메일", "등록일자");
 
 			if (rs.next()) {
-				svo = new StudentVo();
+				svo = new StudentVO();
 				svo.setNo(rs.getInt("no"));
 				svo.setSd_num(rs.getString("sd_num"));
 				svo.setSd_name(rs.getString("sd_name"));
@@ -292,7 +290,7 @@ public class StudentDAO {
 	}
 
 	// 학생 정보 수정
-	public void setStudentUpdate(StudentVo svo) throws Exception {
+	public void setStudentUpdate(StudentVO svo) throws Exception {
 
 		String sql = "update student set sd_password = ?, sd_phone = ?, sd_address = ?, sd_email = ? where sd_num = ?";
 
@@ -343,7 +341,7 @@ public class StudentDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		StudentVo svo = null;
+		StudentVO svo = null;
 
 		try {
 			con = DBUtil.getConnection();
@@ -354,7 +352,7 @@ public class StudentDAO {
 					"아이디", "비밀번호", "학과", "생년월일", "전화번호", "주소", "이메일", "등록일자");
 
 			while (rs.next()) {
-				svo = new StudentVo();
+				svo = new StudentVO();
 				svo.setNo(rs.getInt("no"));
 				svo.setSd_num(rs.getString("sd_num"));
 				svo.setSd_name(rs.getString("sd_name"));

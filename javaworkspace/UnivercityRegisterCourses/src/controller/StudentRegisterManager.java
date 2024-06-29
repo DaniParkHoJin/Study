@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import model.StudentVo;
+import model.StudentVO;
 	
 public class StudentRegisterManager {
 	// 학생 정보 등록
@@ -13,7 +13,7 @@ public class StudentRegisterManager {
 
 		SubjectDAO sdao = new SubjectDAO();
 		StudentDAO sd = new StudentDAO();
-		StudentVo svo = new StudentVo();
+		StudentVO svo = new StudentVO();
 
 		String sd_num; // 학번
 		String sd_name; // 이름
@@ -90,7 +90,7 @@ public class StudentRegisterManager {
 		Scanner inputString = new Scanner(System.in);
 
 		StudentDAO sdao = new StudentDAO();
-		StudentVo svo = new StudentVo();
+		StudentVO svo = new StudentVO();
 
 		String id; // 아이디
 		String pw; // 입력 비밀번호

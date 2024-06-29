@@ -1,8 +1,6 @@
 package model;
 
-import java.util.Date;
-
-public class StudentVo {
+public class StudentVO {
 	// 필드 선언
 	private int no;	// 학생 일련번호
 	private String sd_num; // 학번
@@ -17,11 +15,11 @@ public class StudentVo {
 	private String sd_date; // 등록일
 	
 	// 기본 생성자
-	public StudentVo() {
+	public StudentVO() {
 		super();
 	}
 	// 모든 필드를 받는 생성자
-	public StudentVo(int no, String sd_num, String sd_name, String sd_id, String sd_password, String s_num,
+	public StudentVO(int no, String sd_num, String sd_name, String sd_id, String sd_password, String s_num,
 			String sd_birthday, String sd_phone, String sd_address, String sd_email, String sd_date) {
 		super();
 		this.no = no;
