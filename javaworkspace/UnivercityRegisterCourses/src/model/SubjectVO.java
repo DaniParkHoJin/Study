@@ -1,16 +1,16 @@
 package model;
 
-public class SubjectVo {
+public class SubjectVO {
 	// 필드 선언
 	private int no; // 학과 일련번호
 	private String s_num; //  학과 번호
 	private String s_name; // 학과명
 	// 기본 생성자
-	public SubjectVo() {
+	public SubjectVO() {
 		super();
 	}
 	// 필드를 모두 받는 생성자
-	public SubjectVo(int no, String s_num, String s_name) {
+	public SubjectVO(int no, String s_num, String s_name) {
 		super();
 		this.no = no;
 		this.s_num = s_num;

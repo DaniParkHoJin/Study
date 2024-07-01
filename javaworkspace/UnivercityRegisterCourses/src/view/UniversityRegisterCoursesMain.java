@@ -47,7 +47,7 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 수강 신청 메뉴
-	private static void traineeMenu() {
+	private static void traineeMenu() throws Exception {
 		int choice;
 		TraineeRegisterManager traineeManager = new TraineeRegisterManager();
 		MenuViewer.traineeMenuView();
